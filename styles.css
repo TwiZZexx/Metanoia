@@ -1,0 +1,242 @@
+:root {
+    --color1: #404d47;
+    --color2: #8bc53f;
+    --color3: #3f4b47;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-padding-top: 60px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #404d47;
+    line-height: 1.6;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(139, 197, 63, 0.5);
+    }
+    50% {
+        transform: scale(1.3); /* Vergrößert den Button leicht */
+        box-shadow: 0 0 20px rgba(139, 197, 63, 0.8); /* Stärkere Leuchtaura */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(139, 197, 63, 0.5);
+    }
+}
+
+header {
+    background-color: #404d47;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.fw-bold {
+    font-weight: bold;
+}
+
+main {
+    padding-top: 60px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 60px;
+    background-color: white;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dropdown-content {
+    display: none; /* Standardmäßig ausgeblendet */
+    position: absolute;
+    background-color:#8bc53f;
+    color: #404d47;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-content li:last-child {
+    border-bottom: none; /* Keine Trennlinie beim letzten Element */
+}
+
+.nav-links li:last-child .dropdown-content{
+    right: 0;
+    left: auto;
+}
+
+.dropdown-content a {
+    color: #404d47;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+/* Hover-Effekt für Dropdown-Links */
+.dropdown-content a:hover {
+    background-color:#404d47;
+    color: white;
+}
+
+/* Dropdown-Menü anzeigen beim Hover auf das Listenelement */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dropdown-Container anpassen */
+.dropdown {
+    cursor: pointer; /* Zeigerhand anzeigen, wenn der Benutzer über das Dropdown fährt */
+}
+
+
+.hero {
+    background-color: #8bc53f;
+    color: white;
+    padding: 50px 20px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    height: 600px;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+footer {
+    background-color: #404d47;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.ta-center {
+    text-align: center;
+}
+
+.sections {
+    padding: 50px;
+    margin: 0 50px;
+}
+
+.sections:nth-child(even) {
+    background-color: #8bc53f;
+}
+
+.main-content {
+    flex: 5;
+}
+
+.content-wrapper {
+    display: flex;
+}
+
+.donation-sticky {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    padding: 50px;
+    top: 100px;
+}
+
+.donation-wrapper {
+    flex: 1;
+}
+
+.button {
+    margin-top: 50px;
+    height: 50px;
+    width: 100px;
+    color: var(--color2);
+    background-color: var(--color1);
+    animation: pulse 2s infinite;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    font-size: 14px;
+}
+
+.button:hover {
+    cursor: url('images/dog.png'), pointer;
+}
+
+.sections a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.sections a:hover {
+    color:blue;
+}
+
+.verein-wrapper {
+    display: flex;
+    padding-top: 100px;
+}
+
+.divider {
+    width: 1px;
+    background-color: var(--color3);
+    margin: 0 10px;
+}
+
+.verein {
+    flex: 1;
+    scroll-margin-top: 60px;
+}
+
