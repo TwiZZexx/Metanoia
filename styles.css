@@ -11,8 +11,8 @@
 }
 
 html {
-    scroll-padding-top: 60px;
     scroll-behavior: smooth;
+    font-size: 20px;
 }
 
 body {
@@ -78,7 +78,12 @@ main {
     font-weight: bold;
 }
 
-.dropdown-content {
+.nav-links .dropdown-content ul,
+.nav-links .dropdown-content ol {
+    list-style: none;
+}
+
+.nav-links > .dropdown > .dropdown-content {
     display: none; /* Standardmäßig ausgeblendet */
     position: absolute;
     background-color:#8bc53f;
@@ -89,6 +94,22 @@ main {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+.nav-links > .dropdown > .dropdown-content .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    box-shadow: 2px 4px 8px 10px rgba(63, 75, 71, 0.5);
+    background-color: #8bc53f;
+    padding: 10px 0;
+    z-index: 2;
+    white-space: nowrap;
+}
+
+.nav-links > .dropdown > .dropdown-content .dropdown:hover > .dropdown-content {
+    display: block;
 }
 
 .dropdown-content li:last-child {
@@ -119,9 +140,24 @@ main {
     display: block;
 }
 
+.dropdown-content .dropdown {
+    position: relative;
+}
+
+.dropdown-content .dropdown-content {
+    top: 0;
+    left: 100%;
+    display: none;
+    z-index: 2;
+}
+
+.dropdown-content .dropdown:hover .dropdown-content {
+    display: block;
+}
+
 /* Dropdown-Container anpassen */
 .dropdown {
-    cursor: pointer; /* Zeigerhand anzeigen, wenn der Benutzer über das Dropdown fährt */
+    cursor: pointer;
 }
 
 
@@ -158,7 +194,6 @@ main {
 footer {
     background-color: #404d47;
     color: white;
-    text-align: center;
     padding: 10px 0;
 }
 
@@ -240,3 +275,44 @@ footer {
     scroll-margin-top: 60px;
 }
 
+.landing-page-quote {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 60px;
+}
+
+.about-us-pics {
+    height: 100%;
+    object-fit: cover;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.about-us-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-us-info {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.about-us-pics-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.melanie-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.melanie-info {
+    display: flex;
+    flex-direction: row-reverse;
+}
